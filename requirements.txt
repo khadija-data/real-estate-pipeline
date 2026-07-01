@@ -1,3 +1,6 @@
 pandas
 snowflake
 datetime
+pandas
+snowflake-connector-python
+python-dotenv
