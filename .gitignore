@@ -1,0 +1,7 @@
+.env
+venv/
+logs/
+target/
+.env
+real_estate_dbt/profiles.yml
+real_estate_dbt/target/
