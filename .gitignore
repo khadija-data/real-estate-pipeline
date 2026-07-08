@@ -1,6 +1,34 @@
-profiles.yml
+# Credentials
 .env
+profiles.yml
+*.key
+
+# dbt
 dbt_project/target/
 dbt_project/dbt_packages/
+dbt_project/logs/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Power BI temp
+*.pbix.lock
+
+# Airflow
+airflow/logs/
+airflow/*.db
+airflow/*.cfg
