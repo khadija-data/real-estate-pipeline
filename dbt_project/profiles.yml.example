@@ -1,0 +1,13 @@
+real_estate_dw:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: YOUR_ACCOUNT
+      user: YOUR_USER
+      password: YOUR_PASSWORD
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: REAL_ESTATE_DB
+      schema: SILVER
+      threads: 4
