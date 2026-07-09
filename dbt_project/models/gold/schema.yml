@@ -1,0 +1,65 @@
+version: 2
+
+models:
+
+  - name: dim_location
+    description: "Dimension géographique — pays, ville, quartier"
+    columns:
+      - name: location_sk
+        description: "Surrogate Key"
+        tests: [unique, not_null]
+      - name: country
+        tests: [not_null]
+      - name: city
+        tests: [not_null]
+
+  - name: dim_property
+    description: "Dimension caractéristiques du bien"
+    columns:
+      - name: property_sk
+        description: "Surrogate Key"
+        tests: [unique, not_null]
+      - name: property_type
+        tests: [not_null]
+
+  - name: dim_date
+    description: "Dimension temporelle"
+    columns:
+      - name: date_sk
+        description: "Surrogate Key"
+        tests: [unique, not_null]
+      - name: full_date
+        tests: [unique, not_null]
+      - name: year
+        tests: [not_null]
+
+  - name: fact_listings
+    description: "Table de faits — annonces immobilières"
+    columns:
+      - name: listing_sk
+        description: "Surrogate Key"
+        tests: [unique, not_null]
+      - name: listing_id
+        tests: [unique, not_null]
+      - name: location_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_sk
+      - name: property_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_property')
+              field: property_sk
+      - name: date_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_sk
+      - name: price
+        tests: [not_null]
+      - name: surface_m2
+        tests: [not_null]

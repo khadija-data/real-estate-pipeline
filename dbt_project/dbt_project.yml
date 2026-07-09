@@ -1,0 +1,21 @@
+name: 'real_estate_dw'
+version: '1.0.0'
+config-version: 2
+
+profile: 'real_estate_dw'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  real_estate_dw:
+    silver:
+      +materialized: table
+      +schema: SILVER
+    gold:
+      +materialized: table
+      +schema: GOLD
