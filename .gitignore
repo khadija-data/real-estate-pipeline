@@ -1,12 +1,14 @@
 # Credentials
 .env
 profiles.yml
+!dbt_project/profiles.yml
 *.key
 
 # dbt
 dbt_project/target/
 dbt_project/dbt_packages/
 dbt_project/logs/
+dbt_project/.user.yml
 
 # Python
 __pycache__/

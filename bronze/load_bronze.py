@@ -2,6 +2,7 @@ import pandas as pd
 import snowflake.connector
 from datetime import datetime
 import os
+import math
 
 # ─── Configuration ───────────────────────────────────────
 SNOWFLAKE_CONFIG = {
@@ -61,8 +62,21 @@ def create_table(cursor):
 # ─── Insert Data ─────────────────────────────────────────
 def insert_data(cursor, df: pd.DataFrame):
     print(f"[INFO] Inserting {len(df)} rows into Bronze...")
-    df = df.where(pd.notnull(df), None)
-    rows = [tuple(row) for row in df.itertuples(index=False)]
+
+    def clean_value(value):
+        if value is None:
+            return None
+        if isinstance(value, float) and math.isnan(value):
+            return None
+        if pd.isna(value):
+            return None
+        return value
+
+    rows = [
+        tuple(clean_value(value) for value in row)
+        for row in df.itertuples(index=False, name=None)
+    ]
+
     cursor.executemany(
         f"""
         INSERT INTO REAL_ESTATE_DB.BRONZE.{TABLE} VALUES
