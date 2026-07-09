@@ -34,3 +34,5 @@ Thumbs.db
 airflow/logs/
 airflow/*.db
 airflow/*.cfg
+
+dbt_project/profiles.yml
