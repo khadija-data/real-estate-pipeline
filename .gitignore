@@ -1,15 +1,14 @@
 <<<<<<< HEAD
 # Credentials
 .env
-profiles.yml
-!dbt_project/profiles.yml
+dbt/profiles.yml
 *.key
 
-# dbt
-dbt_project/target/
-dbt_project/dbt_packages/
-dbt_project/logs/
-dbt_project/.user.yml
+# dbt generated files
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
 
 # Python
 __pycache__/
@@ -34,6 +33,9 @@ Thumbs.db
 # Airflow
 airflow/logs/
 airflow/*.db
+<<<<<<< HEAD
+airflow/*.cfg
+=======
 airflow/*.cfg
 
 dbt_project/profiles.yml
@@ -46,3 +48,4 @@ target/
 real_estate_dbt/profiles.yml
 real_estate_dbt/target/
 >>>>>>> 628c5b020935aa92741726d432b2c238fdbf6e2c
+>>>>>>> origin/main
