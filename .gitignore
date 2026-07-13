@@ -1,14 +1,16 @@
-<<<<<<< HEAD
 # Credentials
 .env
 dbt/profiles.yml
 *.key
+real_estate_dbt/profiles.yml
 
 # dbt generated files
 dbt/target/
 dbt/dbt_packages/
 dbt/logs/
 dbt/.user.yml
+real_estate_dbt/target/
+target/
 
 # Python
 __pycache__/
@@ -17,11 +19,13 @@ __pycache__/
 *.pyd
 venv/
 .venv/
+
 *.egg-info/
 
 # Logs
 *.log
 logs/
+airflow/logs/
 
 # OS
 .DS_Store
@@ -31,21 +35,5 @@ Thumbs.db
 *.pbix.lock
 
 # Airflow
-airflow/logs/
 airflow/*.db
-<<<<<<< HEAD
 airflow/*.cfg
-=======
-airflow/*.cfg
-
-dbt_project/profiles.yml
-=======
-.env
-venv/
-logs/
-target/
-.env
-real_estate_dbt/profiles.yml
-real_estate_dbt/target/
->>>>>>> 628c5b020935aa92741726d432b2c238fdbf6e2c
->>>>>>> origin/main
