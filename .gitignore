@@ -1,1 +1,39 @@
+# Credentials
 .env
+dbt/profiles.yml
+*.key
+real_estate_dbt/profiles.yml
+
+# dbt generated files
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
+real_estate_dbt/target/
+target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+
+*.egg-info/
+
+# Logs
+*.log
+logs/
+airflow/logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Power BI temp
+*.pbix.lock
+
+# Airflow
+airflow/*.db
+airflow/*.cfg

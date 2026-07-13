@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: REAL_ESTATE_DB
+    schema: BRONZE
+    tables:
+      - name: real_estate_bronze
